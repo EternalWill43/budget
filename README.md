@@ -1,18 +1,10 @@
-# Tiny Quickstart (Next.js)
+# Budget Plaid/NextJS
 
 ### Overview
 
-This is a minimial application that uses [Next.js](https://nextjs.org/) for a React frontend and a Node.js backend.
+This is a minimial budgeting application that uses [Next.js](https://nextjs.org/) for a React frontend and a Node.js backend.
 
 After linking a sample bank account, the app retrieves balance information associated with the account and renders it on the `/dash` page.
-
-If you're looking for a more fully-featured quickstart, covering more API endpoints, available in more languages, and with explanations of the underlying flows, see the official [Plaid Quickstart](https://www.plaid.com/docs/quickstart).
-
-#### Set up your environment
-
-Install [Node.js v16+](https://nodejs.dev/learn/how-to-install-nodejs).
-
-[Install `pnpm`](https://pnpm.io/installation) to follow along with these instructions as written.
 
 #### Install dependencies
 
