@@ -2,8 +2,19 @@ import { withIronSessionSsr } from 'iron-session/next';
 import { plaidClient, sessionOptions } from '../lib/plaid';
 
 export default function Dashboard({ balance }) {
-  console.log(balance);
-  return <div>DASH</div>
+  const Txns = () => (
+    balance.map(txn => <div className='border p-2 mx-auto'>
+      <div>Amount: {txn.amount}</div>
+      <div>Name: {txn.name}</div>
+      <div>Category: {txn.category}</div>
+      <div>Merchant Name: {txn.merchant_name}</div>
+    </div>)
+  )
+  return <div className="bg-slate-900 text-white p-2">Txn Dashboard
+    <div>
+    <Txns/>
+    </div>
+  </div>
 }
 
 export const getServerSideProps = withIronSessionSsr(
