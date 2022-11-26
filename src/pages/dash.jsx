@@ -31,8 +31,6 @@ export const getServerSideProps = withIronSessionSsr(
     }
 
     const response = await plaidClient.transactionsGet({ access_token, start_date: '2018-01-01', end_date: '2021-02-01' });
-    console.log(response.data);
-    console.log("RES---------------------------------")
     return {
       props: {
         balance: response.data.transactions,

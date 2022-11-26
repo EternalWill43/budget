@@ -1,9 +1,11 @@
+import Link from 'next/link';
 import Router from 'next/router';
 import { useState, useEffect, useCallback } from 'react';
 import { usePlaidLink } from 'react-plaid-link';
 
 export default function Home() {
   const [token, setToken] = useState(null);
+  const [succeeded, setSucceeded] = useState(false);
 
   useEffect(() => {
     const createLinkToken = async () => {
@@ -24,7 +26,7 @@ export default function Home() {
       },
       body: JSON.stringify({ public_token: publicToken }),
     });
-    Router.push('/dash');
+    setSucceeded(true);
   }, []);
 
   const { open, ready } = usePlaidLink({
@@ -35,6 +37,7 @@ export default function Home() {
   return (
     <button onClick={() => open()} disabled={!ready}>
       <strong>Link account</strong>
+      {succeeded ? <Link href="/dash">Go to dashboard</Link> : null}
     </button>
   );
 }
