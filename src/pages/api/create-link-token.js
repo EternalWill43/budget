@@ -10,7 +10,7 @@ export default async function handler(req, res) {
     user: { client_user_id: process.env.PLAID_CLIENT_ID },
     client_name: "Plaid's Tiny Quickstart",
     language: 'en',
-    products: ['auth'],
+    products: ['auth', 'transactions'],
     country_codes: ['US'],
     redirect_uri: process.env.PLAID_SANDBOX_REDIRECT_URI,
   });
