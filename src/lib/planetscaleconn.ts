@@ -1,6 +1,6 @@
 import mysql from "mysql2";
 
-const connection = mysql.createPool(process.env.DATABASE_URL);
+const connection = mysql.createPool({uri: process.env.DATABASE_URL});
 
 export const initQuery = async () => {
     let [rows] = await connection
