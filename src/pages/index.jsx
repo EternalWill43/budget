@@ -2,7 +2,7 @@ import Router from 'next/router';
 import { useState, useEffect, useCallback } from 'react';
 import { usePlaidLink } from 'react-plaid-link';
 
-export default function PlaidLink() {
+export default function Home() {
   const [token, setToken] = useState(null);
 
   useEffect(() => {
